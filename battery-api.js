@@ -6,7 +6,7 @@ const dischargingTime = document.querySelector(".discharging-time");
 const level = document.querySelector(".level");
 
 navigator.getBattery().then((battery) => {
-  setStatus(battery);
+  setInitialStatus(battery);
 
   isCharging(battery);
   remainingTime(battery);
@@ -14,7 +14,7 @@ navigator.getBattery().then((battery) => {
   batteryLevel(battery);
 });
 
-function setStatus(battery) {
+function setInitialStatus(battery) {
   charging.innerHTML = battery.charging ? "Yes" : "No";
   chargingStatus(battery, true);
   chargingStatus(battery, false);
